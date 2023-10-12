@@ -20,4 +20,14 @@ RSpec.describe Book, type: :model do
   it "is not valid without a title" do
     expect(invalid_book).not_to be_valid
   end
+  context 'Database' do
+    it 'checks if data is present in the database' do
+      expect(Book.exists?(valid_book.id)).to be true
+    end
+
+    it 'checks the number of records in the database' do
+      create_list(:book, 3)
+      expect(Book.count).to eq(3)
+    end
+  end
 end
