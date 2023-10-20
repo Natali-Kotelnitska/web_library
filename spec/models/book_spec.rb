@@ -4,17 +4,17 @@ RSpec.describe Book, type: :model do
   let(:valid_book) { create(:book) }
 
   describe 'Validations' do
-    it { should validate_presence_of(:title) }
-    it { should validate_length_of(:title).is_at_least(1).is_at_most(60) }
-    it { should validate_presence_of(:author) }
-    it { should validate_length_of(:author).is_at_least(1).is_at_most(60) }
-    it { should validate_presence_of(:description) }
-    it { should validate_length_of(:description).is_at_least(2).is_at_most(500) }
-    it { should allow_value("1234567890").for(:isbn) }
-  end
+    it { is_expected.to validate_presence_of(:title) }
+    it { is_expected.to validate_length_of(:title).is_at_least(1).is_at_most(60) }
+    it { is_expected.to validate_presence_of(:author) }
+    it { is_expected.to validate_length_of(:author).is_at_least(1).is_at_most(60) }
+    it { is_expected.to validate_presence_of(:description) }
+    it { is_expected.to validate_length_of(:description).is_at_least(2).is_at_most(500) }
+    it { is_expected.to allow_value(1234567890).for(:isbn) }
 
-  it "is valid with valid attributes" do
-    expect(valid_book).to be_valid
+    it "is valid with valid attributes" do
+      expect(valid_book).to be_valid
+    end
   end
 
   context 'Database' do
