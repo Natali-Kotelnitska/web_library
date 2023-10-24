@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Book, type: :model do
   let(:valid_book) { create(:book) }
+  let(:invalid_book) { build(:book, title: "", author: "Author Name", description: "Description", isbn: "1234567890") }
+
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:title) }
@@ -12,8 +14,16 @@ RSpec.describe Book, type: :model do
     it { is_expected.to validate_length_of(:description).is_at_least(2).is_at_most(500) }
     it { is_expected.to allow_value(1234567890).for(:isbn) }
 
+    it { is_expected.not_to allow_value("").for(:title) }
+    it { is_expected.not_to allow_value("").for(:author) }
+    it { is_expected.not_to allow_value("a").for(:description) }
+
     it "is valid with valid attributes" do
       expect(valid_book).to be_valid
+    end
+
+    it "is not valid with invalid attributes" do
+      expect(invalid_book).not_to be_valid
     end
   end
 
