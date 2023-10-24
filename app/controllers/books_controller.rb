@@ -1,11 +1,11 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.by_title
+    @books = collection
   end
 
   def show
-    @book = Book.find(params[:id])
+    @book = resource
   end
 
   def new
@@ -13,35 +13,39 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find(params[:id])
+    @book = resource
   end
 
   def create
-    @book = Book.new(book_params)
+    @book = collection.new(book_params)
 
     if @book.save
-      redirect_to book_path(@book), notice: "Book was successfully created."
+      flash[:notice] = "Book was successfully created"
+      redirect_to book_path(@book)
     else
+      flash[:error] = "Error: Book could not be created."
       render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    @book = Book.find(params[:id])
+    @book = resource
 
     if @book.update(book_params)
       redirect_to book_path(@book), notice: "Book was successfully updated."
     else
+      flash[:error] = "Error: Book could not be created."
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @book = Book.find(params[:id])
+    @book = resource
     @book.destroy
 
-    redirect_to books_path, notice: "Book was successfully destroyed",
-    status: :see_other # HTTP 303 See Other (with redirection)
+    flash[:notice] = "Book was successfully destroyed"
+    redirect_to books_path,
+    status: :see_other
   end
 
   private
@@ -54,7 +58,7 @@ class BooksController < ApplicationController
       Book.ordered
     end
 
-    def resourse
+    def resource
       collection.find(params[:id])
     end
 end

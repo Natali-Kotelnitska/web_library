@@ -1,4 +1,4 @@
-<%= simple_form_for @book, defaults: { input_html: { class: 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full' } }, html: { class: 'contents' } do |form| %>
+<%= simple_form_for @book, defaults: { input_html: { class: 'form_input' } }, html: { class: 'contents' } do |form| %>
   <%= form.error_notification %>
 
   <div class="my-5">
@@ -18,6 +18,6 @@
   </div>
 
   <div class="inline">
-    <%= form.button :submit, 'Save', class: 'rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer' %>
+    <%= form.button :submit, 'Save', class: 'form_btn' %>
   </div>
 <% end %>
