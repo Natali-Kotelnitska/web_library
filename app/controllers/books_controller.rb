@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 
   def index
     @books = collection
+    flash.now[:warning] = "We have exactly #{@books.size} books available."
   end
 
   def show
@@ -20,10 +21,9 @@ class BooksController < ApplicationController
     @book = collection.new(book_params)
 
     if @book.save
-      flash[:notice] = "Book was successfully created"
-      redirect_to book_path(@book)
+      redirect_to book_path(@book), notice: "Book was successfully created"
     else
-      flash[:error] = "Error: Book could not be created."
+      flash.now[:error] = "Error: Book could not be created."
       render :new, status: :unprocessable_entity
     end
   end
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to book_path(@book), notice: "Book was successfully updated."
     else
-      flash[:error] = "Error: Book could not be created."
+      flash.now[:error] = "Error: Book could not be created."
       render :edit, status: :unprocessable_entity
     end
   end
@@ -43,8 +43,7 @@ class BooksController < ApplicationController
     @book = resource
     @book.destroy
 
-    flash[:notice] = "Book was successfully destroyed"
-    redirect_to books_path,
+    redirect_to books_path, notice: "Book was successfully destroyed",
     status: :see_other
   end
 

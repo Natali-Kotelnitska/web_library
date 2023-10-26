@@ -13,12 +13,23 @@
     @apply inline-block px-3 py-2 mb-5 font-medium text-green-500 rounded-lg bg-green-50;
   }
 
-  .error {
+  .w-full abbr {
+    @apply  text-red-500 no-underline;
+  }
+  .w-full .error{
     @apply inline-block px-3 py-2 mb-5 font-medium text-red-500 rounded-lg bg-red-50;
   }
 
-  .warning {
+  .flash_msg .flash-notice {
+    @apply inline-block px-3 py-2 mb-5 font-medium text-green-900 bg-green-300 rounded-lg;
+  }
+
+  .flash_msg .flash-warning {
     @apply inline-block px-3 py-2 mb-5 font-medium text-yellow-500 rounded-lg bg-yellow-50;
+  }
+
+  .flash_msg .flash-error {
+    @apply inline-block px-3 py-2 mb-5 font-medium text-red-500 rounded-lg bg-red-50;
   }
 
   .link {
@@ -33,5 +44,3 @@
     @apply inline-block px-5 py-3 font-medium text-white bg-blue-600 rounded-lg cursor-pointer;
   }
 }
-
- /* simple_form css */
