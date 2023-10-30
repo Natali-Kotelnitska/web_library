@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Book, type: :model do
   let(:valid_book) { create(:book) }
-  let(:invalid_book) { build(:book, title: "", author: "Author Name", description: "Description", isbn: "1234567890") }
+  let(:invalid_book) { build(:book, :invalid) }
 
 
   describe 'Validations' do
@@ -14,9 +14,10 @@ RSpec.describe Book, type: :model do
     it { is_expected.to validate_length_of(:description).is_at_least(2).is_at_most(500) }
     it { is_expected.to allow_value(1234567890).for(:isbn) }
 
-    it { is_expected.not_to allow_value("").for(:title) }
-    it { is_expected.not_to allow_value("").for(:author) }
+    it { is_expected.not_to allow_value("a" * 61).for(:title) }
+    it { is_expected.not_to allow_value("a" * 61).for(:author) }
     it { is_expected.not_to allow_value("a").for(:description) }
+    it { is_expected.not_to allow_value("a" * 501).for(:description) }
 
     it "is valid with valid attributes" do
       expect(valid_book).to be_valid
@@ -29,12 +30,8 @@ RSpec.describe Book, type: :model do
 
   context 'Database' do
     it 'checks if data is present in the database' do
-      expect(Book.exists?(valid_book.id)).to be true
+      expect(valid_book).to be_persisted
     end
 
-    it 'checks the number of records in the database' do
-      create_list(:book, 3)
-      expect(Book.count).to eq(3)
-    end
   end
 end

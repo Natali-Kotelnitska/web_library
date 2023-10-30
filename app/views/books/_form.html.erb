@@ -1,5 +1,4 @@
-<%= simple_form_for @book,  url: (@book.new_record? ? books_path : book_path(@book)), defaults: { input_html: { class: 'form_input' } }, html: { class: 'contents' } do |form| %>
-  <%= form.error_notification %>
+<%= simple_form_for book, defaults: { input_html: { class: 'form_input' } }, html: { class: 'contents' } do |form| %>
 
   <div class="my-5">
     <%= form.input :title %>

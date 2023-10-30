@@ -4,5 +4,10 @@ FactoryBot.define do
     author { Faker::Book.author }
     isbn { Faker::Code.isbn }
     description { Faker::Lorem.paragraph }
+
+    trait :invalid do
+      title { '' }
+    end
+
   end
 end

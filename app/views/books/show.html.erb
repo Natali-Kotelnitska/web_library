@@ -1,11 +1,10 @@
 <div class="flex w-full mx-auto md:w-2/3">
   <div class="mx-auto">
-
     <%= render "books/book", book: @book %>
 
     <%= link_to 'Edit this book', edit_book_path(@book), class: "btn-primary" %>
     <div class="inline-block ml-2">
-      <%= button_to 'Destroy this book', book_path(@book), method: :delete, class: "btn-primary", data: {"turbo-confirm": "Are you sure you want to delete #{@book.title}?"}%>
+     <%= button_to 'Destroy this book', book_path(@book), method: :delete, class: "btn-primary", data: { "turbo-confirm": "Are you sure you want to delete #{@book.title}?" }%>
     </div>
     <%= link_to 'Back to books', books_path, class: "btn-primary" %>
   </div>
