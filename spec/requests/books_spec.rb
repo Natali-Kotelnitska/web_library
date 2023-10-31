@@ -13,9 +13,7 @@ RSpec.describe BooksController, type: :request do
       get books_url
 
       expect(response).to be_successful
-      # expect(response).to render_template('index' )
-
-    expect(response.body).to include(book.title)
+      expect(response.body).to include(book.title)
     end
   end
 
@@ -97,7 +95,6 @@ RSpec.describe BooksController, type: :request do
   end
 
   describe 'DELETE #destroy' do
-
     it 'destroys the requested book and redirects to the books list' do
       expect {delete book_url(book)}
        .to change(Book, :count).by(-1)

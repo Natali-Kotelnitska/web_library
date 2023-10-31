@@ -1,46 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-
-@layer components {
-  .btn-primary {
-    @apply inline-block px-5 py-3 ml-2 font-medium bg-gray-100 rounded-lg;
-  }
-
-  .notice {
-    @apply inline-block px-3 py-2 mb-5 font-medium text-green-500 rounded-lg bg-green-50;
-  }
-
-  .w-full abbr {
-    @apply  text-red-500 no-underline;
-  }
-  .w-full .error{
-    @apply inline-block px-3 py-2 mb-5 font-medium text-red-500 rounded-lg bg-red-50;
-  }
-
-  .flash_msg .flash-notice {
-    @apply inline-block px-3 py-2 mb-5 font-medium text-green-900 bg-green-300 rounded-lg;
-  }
-
-  .flash_msg .flash-warning {
-    @apply inline-block px-3 py-2 mb-5 font-medium text-yellow-500 rounded-lg bg-yellow-50;
-  }
-
-  .flash_msg .flash-alert {
-    @apply inline-block px-3 py-2 mb-5 font-medium text-red-500 rounded-lg bg-red-50;
-  }
-
-  .link {
-    @apply block px-5 py-3 font-medium text-white bg-blue-600 rounded-lg;
-  }
-
-  .form_input {
-    @apply block w-full px-3 py-2 mt-2 border border-gray-200 rounded-md shadow outline-none;
-  }
-
-  .form_btn {
-    @apply inline-block px-5 py-3 font-medium text-white bg-blue-600 rounded-lg cursor-pointer;
-  }
-}
+@import './button.css';
+@import './flash.css';
+@import './form.css';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
