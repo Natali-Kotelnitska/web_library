@@ -1,6 +1,7 @@
 @import './button.css';
 @import './flash.css';
 @import './form.css';
+@import './book_list.css';
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
