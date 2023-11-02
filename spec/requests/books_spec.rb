@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe BooksController, type: :request do
-  let(:valid_attributes) { attributes_for(:book) }
-  let(:invalid_attributes) { attributes_for(:book, title: '') }
-  let(:new_attributes) { attributes_for(:book) }
-  let!(:book) { create(:book, valid_attributes) }
+
+  let(:valid_attributes) { FactoryBot.attributes_for(:book) }
+  let(:invalid_attributes) { FactoryBot.attributes_for(:book, title: '') }
+  let(:new_attributes) { FactoryBot.attributes_for(:book) }
   let(:valid_params) { { book: valid_attributes } }
   let(:invalid_params) { { book: invalid_attributes } }
+  let!(:book) { FactoryBot.create(:book) }
 
   describe 'GET /index' do
     it 'renders index page and a successful response' do
@@ -40,6 +41,7 @@ RSpec.describe BooksController, type: :request do
       get edit_book_path(book)
 
       expect(response).to be_successful
+      expect(response.body).to include(book.title)
     end
   end
 
