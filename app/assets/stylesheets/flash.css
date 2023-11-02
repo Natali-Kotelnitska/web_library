@@ -1,5 +1,4 @@
 @layer components {
-
   .flash_msg .flash-notice {
     @apply inline-block px-3 py-2 mb-5 font-medium text-green-900 bg-green-300 rounded-lg;
   }
@@ -11,5 +10,4 @@
   .flash_msg .flash-alert {
     @apply inline-block px-3 py-2 mb-5 font-medium text-red-500 rounded-lg bg-red-50;
   }
-
 }

@@ -1,5 +1,4 @@
 @layer components {
-
   .w-full abbr {
     @apply text-red-500 no-underline;
   }
@@ -19,5 +18,4 @@
   .form_btn {
     @apply inline-block px-5 py-3 font-medium text-white bg-blue-600 rounded-lg cursor-pointer;
   }
-
 }
