@@ -1,0 +1,28 @@
+@layer components {
+  .book-card {
+    @apply flex px-5 py-8 mb-8;
+  }
+  .book-card_title {
+    @apply my-5 text-4xl font-extrabold text-gray-700;
+  }
+
+  .book-card_img {
+    @apply block object-cover h-auto rounded w-96;
+  }
+
+  .book-card_info {
+    @apply ml-8;
+  }
+
+  .book-card_item {
+    @apply my-5 mb-1 font-medium;
+  }
+
+  .book-card_item--data {
+    @apply font-bold text-orange;
+  }
+
+  .book-description {
+   @apply mt-5;
+  }
+}
