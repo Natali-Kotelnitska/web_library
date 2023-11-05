@@ -5,3 +5,10 @@ db/schema.rb linguist-generated
 
 # Mark any vendored files as having been vendored.
 vendor/* linguist-vendored
+
+# Specify text files and set the line endings to LF (Unix-style)
+* text eol=lf
+
+# Explicitly specify binary files to avoid line-ending normalization
+*.jpg binary
+*.png binary

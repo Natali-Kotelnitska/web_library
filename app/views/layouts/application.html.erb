@@ -14,8 +14,11 @@
   </head>
 
   <body>
-    <main class="container flex px-5 mx-auto mt-28">
-      <%= yield %>
+    <main class="container px-5 mx-auto mt-28">
+      <div class="flash_msg">
+      <%= render 'layouts/flash'%>
+      <div>
+        <%= yield %>
     </main>
   </body>
 </html>
