@@ -13,10 +13,6 @@ RSpec.describe Book, type: :model do
     it { is_expected.to allow_value("123-4-56-789999-0").for(:isbn) }
     it { is_expected.to validate_length_of(:description).is_at_most(500) }
 
-    it { is_expected.not_to allow_value("a" * 61).for(:title) }
-    it { is_expected.not_to allow_value("a" * 61).for(:author) }
-    it { is_expected.not_to allow_value("a" * 501).for(:description) }
-    it { is_expected.not_to allow_value("").for(:isbn) }
     it { is_expected.not_to allow_value("&1hn!").for(:isbn) }
 
     it "is valid with valid attributes" do

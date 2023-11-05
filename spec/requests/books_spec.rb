@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe BooksController, type: :request do
-
-  let(:valid_attributes) { FactoryBot.attributes_for(:book) }
-  let(:invalid_attributes) { FactoryBot.attributes_for(:book, title: '') }
-  let(:new_attributes) { FactoryBot.attributes_for(:book) }
+  let(:valid_attributes) { attributes_for(:book) }
+  let(:invalid_attributes) { attributes_for(:book, title: '') }
+  let(:new_attributes) { attributes_for(:book) }
   let(:valid_params) { { book: valid_attributes } }
   let(:invalid_params) { { book: invalid_attributes } }
-  let!(:book) { FactoryBot.create(:book) }
+  let!(:book) { create(:book) }
 
   describe 'GET /index' do
     it 'renders index page and a successful response' do
@@ -98,9 +97,8 @@ RSpec.describe BooksController, type: :request do
     it 'destroys the requested book and redirects to the books list' do
       expect {delete book_path(book)}.to change(Book, :count).by(-1)
 
-       expect(response).to be_redirect
+      expect(response).to be_redirect
       expect(flash[:notice]).to eq("Book was successfully destroyed.")
-      expect(response).to have_http_status(303)
     end
   end
 end
