@@ -1,0 +1,44 @@
+<header class="mb-28">
+  <nav class="header_nav">
+    <div class="nav-flex">
+      <%= link_to root_path do %>
+        <span class="logo">Web Library</span>
+      <% end %>
+
+      <%= link_to 'All books', root_path, class: "btn-signup" %>
+
+      <% if user_signed_in? %>
+        <%= link_to 'New book', new_book_path, class: "btn-signup" %>
+
+        <div  class="dropdown group">
+          <div class="avatar">
+            <svg class="avatar_img" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+          </div>
+
+          <div class="absolute hidden h-auto bg-white -left-1 group-hover:block dropdown-menu">
+            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+              <p class="truncate"><%= current_user.email %></p>
+            </div>
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+              <li> <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %> </li>
+              <li><hr></li>
+              <li>
+                <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn-signup" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      <% else %>
+        <ul class="nav_buttons_box dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <%= link_to 'Log In', new_user_session_path, class: "btn-login" %>
+          </li>
+          <li>
+            <%= link_to 'Sign Up', new_user_registration_path,  class: "btn-signup" %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
+</header>

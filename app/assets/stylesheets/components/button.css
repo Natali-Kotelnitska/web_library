@@ -1,9 +1,17 @@
 @layer components {
   .btn-primary {
-      @apply inline-block px-5 py-3 ml-2 font-medium bg-gray-100 rounded-lg hover:bg-sky-500;
+      @apply inline-block px-4 py-3 ml-2 font-medium bg-gray-100 rounded-lg hover:bg-sky-400;
     }
 
   .btn-delete {
-      @apply inline-block px-5 py-3 ml-2 font-medium bg-red-100 rounded-lg;
+      @apply inline-block px-5 py-3 ml-2 font-medium bg-red-300 rounded-lg;
     }
+
+  .btn-signup {
+      @apply px-4 py-3 mr-3 text-sm font-medium text-center text-white rounded-lg bg-sky-400 hover:bg-gradient-to-r to-emerald-600 from-sky-400 focus:ring-4 focus:outline-none;
+    }
+
+  .btn-login {
+      @apply px-4 py-3 mr-3 text-sm font-medium text-center text-white bg-gray-400 rounded-lg hover:bg-gradient-to-r to-emerald-600 from-sky-400 focus:ring-4 focus:outline-none;
+   }
 }
