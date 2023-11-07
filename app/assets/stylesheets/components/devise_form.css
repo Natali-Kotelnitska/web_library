@@ -1,0 +1,28 @@
+@layer components {
+  .registration_wrapper {
+   @apply w-full max-w-xl mx-auto mb-12 justify-items-center justify-self-center;
+  }
+  .registration {
+    @apply px-8 pt-6 pb-8 mb-4 rounded shadow-md bg-gray-50;
+  }
+
+  .registration .input {
+    @apply mb-5;
+  }
+
+  .registration label {
+    @apply block mb-2 text-sm font-bold text-gray-700;
+  }
+
+  .registration input {
+    @apply w-full px-3 py-2 mb-2 leading-tight text-gray-700 border rounded shadow appearance-none;
+  }
+
+  .registration .hint {
+    @apply text-xs italic text-red-500;
+  }
+
+  .registration .boolean input{
+    @apply w-4 h-4 mr-5 text-blue-600 bg-gray-100 border-gray-300 rounded;
+  }
+}

@@ -2,9 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import './components/header.css';
+@import 'components/header.css';
 @import './components/button.css';
 @import './components/flash.css';
 @import './components/form.css';
 @import './components/book_card.css';
+@import './components/devise_form.css';
 @import './components/book_list.css';
