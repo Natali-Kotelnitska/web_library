@@ -11,19 +11,17 @@
         <%= link_to 'New book', new_book_path, class: "btn-signup" %>
 
         <div  class="dropdown group">
-          <div class="mb-5 avatar">
-            <svg class="avatar_img" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+          <div class="flex items-end mb-5">
+            <%= image_tag('user-check-solid.svg', alt: 'Avatar', size: "40") %>
+            <p class="avatar">Welcome, <%= current_user.username %></p>
           </div>
 
           <div class="absolute hidden h-auto bg-white -left-1 group-hover:block dropdown-menu">
-            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-              <p><%= current_user.username %></p>
-              <p class="truncate"><%= current_user.email %></p>
-            </div>
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-              <li> <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %> </li>
-              <li><hr></li>
-              <li>
+            <ul class="py-2 text-sm text-gray-700">
+              <li class="px-4 py-3">
+                 <p class="truncate"><%= current_user.email %></p>
+              </li>
+              <li class='items-center'>
                 <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn-signup" %>
               </li>
             </ul>
@@ -40,6 +38,7 @@
           </li>
         </ul>
       <% end %>
+
     </div>
   </nav>
 </header>
