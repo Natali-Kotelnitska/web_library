@@ -18,6 +18,8 @@
       <div class="flash_msg"></div>
         <%= render "layouts/header" %>
         <%= render 'layouts/flash'%>
+         <p><%= current_user.inspect %></p>
+
         <%= yield %>
     </main>
   </body>

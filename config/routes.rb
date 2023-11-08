@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :books
 
-  devise_for :users
-  # devise_for :users, skip: :all
+  devise_for :users, only: [:sessions, :registrations]
+
 end

@@ -4,7 +4,7 @@
   }
 
   .w-full .error {
-    @apply inline-block px-3 py-2 mb-5 font-medium text-red-500 rounded-lg bg-red-50;
+    @apply inline-block px-3 py-2 mb-5 ml-3 font-medium text-red-500 rounded-lg bg-red-50;
   }
 
   .link {
