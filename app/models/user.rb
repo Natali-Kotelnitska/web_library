@@ -8,5 +8,4 @@ class User < ApplicationRecord
   validates :username, length: { minimum: 4, maximum: 20 },
                        format: { with: /\A[a-zA-Z0-9_.]+\z/,
                        message: "can only contain letters, numbers, and underscores" }
-
 end
