@@ -3,10 +3,11 @@
     @apply flex px-5 py-8 mb-8;
   }
   .book-card_title {
-    @apply my-5 text-4xl font-extrabold text-gray-700;
+    @apply my-5 text-4xl font-bold text-gray-700;
   }
 
   .book-card_img {
+    /* @apply block object-cover w-full h-auto rounded; */
     @apply block object-cover h-auto rounded w-96;
   }
 
@@ -15,7 +16,7 @@
   }
 
   .book-card_item {
-    @apply my-5 mb-1 font-medium;
+    @apply my-5 mb-1 font-medium ;
   }
 
   .book-card_item--data {

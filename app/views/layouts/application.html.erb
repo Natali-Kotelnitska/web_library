@@ -14,10 +14,10 @@
   </head>
 
   <body>
-    <main class="container px-5 mx-auto mt-28">
-      <div class="flash_msg">
-      <%= render 'layouts/flash'%>
-      <div>
+    <main class="container px-12 mx-auto">
+      <div class="flash_msg"></div>
+        <%= render "layouts/header" %>
+        <%= render 'layouts/flash'%>
         <%= yield %>
     </main>
   </body>

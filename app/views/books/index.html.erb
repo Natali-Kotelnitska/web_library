@@ -1,10 +1,9 @@
 <div class="w-full">
   <div class="flex items-center justify-between">
-    <h1 class="text-4xl font-bold text-center">Books</h1>
-    <%= link_to 'New book', new_book_path, class: "link" %>
+    <h1 class="justify-center mb-8 text-4xl font-bold text-center">Books</h1>
   </div>
 
-  <div id="books" class="grid min-w-full grid-cols-3 gap-3">
+  <div id="books" class="grid min-w-full grid-cols-4 gap-3">
       <%= render partial: "books/book_list", collection: @books, as: :book %>
   </div>
 </div>

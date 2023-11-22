@@ -1,0 +1,30 @@
+<div class="registration_wrapper">
+  <h2 class="logo">Sign up</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="registration">
+      <%= f.input :first_name, required: false, autofocus: true, placeholder: 'Enter your first name' %>
+      <%= f.input :last_name, required: false, autofocus: true, placeholder: 'Enter your last name'  %>
+      <%= f.input :username, required: true, autofocus: true, placeholder: 'Enter your username' %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  placeholder: 'Enter your email',
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  placeholder: '******************',
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  placeholder: '******************',
+                  input_html: { autocomplete: "new-password" } %>
+
+
+      <div class="form-actions">
+          <%= f.button :submit, "Sign up", class: 'btn-signup' %>
+      </div>
+    </div>
+  <% end %>
+</div>
