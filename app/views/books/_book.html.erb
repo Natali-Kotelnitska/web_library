@@ -1,5 +1,9 @@
 <div id="<%= dom_id book %>" class="book-card">
+  <% if book.cover.attached? %>
+    <%= image_tag book.cover, class: "book-card_img" %>
+  <% else %>
     <%= image_tag "no-image.png", class: "book-card_img" %>
+  <% end %>
 
   <div class="book-card_info">
     <h2 class="book-card_title">
@@ -12,15 +16,23 @@
     </p>
 
     <p class="book-card_item">
-      Isbn:
+      ISBN:
       <span class="book-card_item--data"><%= book.isbn %></span>
     </p>
 
     <div class="book-description">
       <p class="book-card_item">
         Description:
-      <span class="book-card_item--data"><%= book.description %></span>
+        <span class="book-card_item--data"><%= book.description %></span>
       </p>
     </div>
+
+    <% if book.content.attached? %>
+      <div class="book-content">
+        <h3 class="my-4 title_main">Content:</h3>
+          <%= link_to 'View Content', rails_blob_path(book.content, disposition: 'inline'), target: '_blank', class: "mb-8 btn-primary" %>
+          <%= link_to 'Download Content', rails_blob_path(book.content, disposition: 'attachment'), class: "btn-primary" %>
+      </div>
+    <% end %>
   </div>
 </div>

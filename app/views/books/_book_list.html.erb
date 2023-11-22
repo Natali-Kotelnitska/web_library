@@ -1,6 +1,9 @@
 <div id="<%= dom_id book %>" class="pb-5 shadow-md rounded-xl">
-      <%= image_tag "no-image.png", class: "book-card_img" %>
-
+  <% if book.cover.attached? %>
+    <%= image_tag book.cover, class: "book-card_img" %>
+  <% else %>
+    <%= image_tag "no-image.png", class: "book-card_img" %>
+  <% end %>
     <div class="book-card_data">
       <h2 class="title_main" >
       <%= link_to book.title, book_path(book) %>
