@@ -24,6 +24,11 @@ RSpec.describe Book, type: :model do
     end
   end
 
+  context "attachments" do
+    it { is_expected.to have_one_attached(:cover) }
+    it { is_expected.to have_one_attached(:content) }
+  end
+
   context 'Database' do
     it 'checks if data is present in the database' do
       expect(valid_book).to be_persisted
