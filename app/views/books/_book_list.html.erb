@@ -1,29 +1,38 @@
-<div id="<%= dom_id book %>" class="pb-5 shadow-md rounded-xl">
+<div id="<%= dom_id book %>" class="book-card">
   <% if book.cover.attached? %>
-    <%= image_tag book.cover, class: "book-card_img" %>
+  <div class="book-card_img-wrapper" >
+    <%= image_tag book.cover, class: " book-card_img transition ease-in-out delay-150 hover:scale-110 duration-300" %>
+  </div>
   <% else %>
-    <%= image_tag "no-image.png", class: "book-card_img" %>
+  <div class="book-card_img-wrapper">
+    <%= image_tag "no-image.png", class: "book-card_img transition ease-in-out delay-150 hover:scale-110 duration-300" %>
+  </div>
   <% end %>
-    <div class="book-card_data">
-      <h2 class="title_main" >
-      <%= link_to book.title, book_path(book) %>
+
+  <div class="flex flex-col justify-between p-4 h-72">
+    <div>
+      <h2 class="mb-2 font-bold" >
+        <%= link_to book.title, book_path(book) %>
       </h2>
 
-      <p class="book-card_item">
-      Author:
-      <span class="book-card_item--data"><%= book.author %></span>
-    </p>
-
-      <p class="book-card_item">
-      Isbn:
-      <span class="book-card_item--data"><%= book.isbn %></span>
-    </p>
-
-      <p class="my-5">
-        <strong class="block mb-1 font-medium">Description:</strong>
-        <%= book.description %>
+      <p class="text-base text-gray-700 ">
+        Author:
+        <span class="book-item--data"><%= book.author %></span>
       </p>
 
+      <p class="text-sm text-gray-700">
+        Isbn:
+        <span class="book-item--data"><%= book.isbn %></span>
+      </p>
+
+      <p class="mt-3 text-base text-gray-700">
+        <strong class="block mb-1 font-medium">Description:</strong>
+        <%= book.description.truncate(70) %>
+      </p>
+    </div>
+
+    <div class="self-center">
       <%= link_to "Show this book", book, class: "btn-signup" %>
     </div>
+  </div>
 </div>

@@ -1,29 +1,29 @@
-<div id="<%= dom_id book %>" class="book-card">
+<div id="<%= dom_id book %>" class="book">
   <% if book.cover.attached? %>
-    <%= image_tag book.cover, class: "book-card_img" %>
+    <%= image_tag book.cover, class: "book-img" %>
   <% else %>
-    <%= image_tag "no-image.png", class: "book-card_img" %>
+    <%= image_tag "no-image.png", class: "book-img" %>
   <% end %>
 
-  <div class="book-card_info">
-    <h2 class="book-card_title">
+  <div class="book-info">
+    <h2 class="book-title">
       <%= book.title %>
     </h2>
 
-    <p class="book-card_item">
+    <p class="book-item">
       Author:
-      <span class="book-card_item--data"><%= book.author %></span>
+      <span class="book-item--data"><%= book.author %></span>
     </p>
 
-    <p class="book-card_item">
+    <p class="book-item">
       ISBN:
-      <span class="book-card_item--data"><%= book.isbn %></span>
+      <span class="book-item--data"><%= book.isbn %></span>
     </p>
 
     <div class="book-description">
-      <p class="book-card_item">
+      <p class="book-item">
         Description:
-        <span class="book-card_item--data"><%= book.description %></span>
+        <span class="book-item--data"><%= book.description %></span>
       </p>
     </div>
 

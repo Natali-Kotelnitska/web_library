@@ -1,9 +1,11 @@
 <div class="w-full">
-  <div class="flex items-center justify-between">
-    <h1 class="justify-center mb-8 text-4xl font-bold text-center">Books</h1>
+  <div class="text-center">
+    <h1 class="quote">
+       "Books are a uniquely portable magic." - Stephen King
+    </h1>
   </div>
 
-  <div id="books" class="grid min-w-full grid-cols-4 gap-3">
+  <div id="books" class="grid min-w-full grid-cols-5 gap-7">
       <%= render partial: "books/book_list", collection: @books, as: :book %>
   </div>
 </div>
