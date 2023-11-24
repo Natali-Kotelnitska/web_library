@@ -7,6 +7,7 @@ RSpec.describe BooksController, type: :request do
   let(:valid_params) { { book: valid_attributes } }
   let(:invalid_params) { { book: invalid_attributes } }
   let!(:book) { create(:book) }
+   let(:user) { create(:user) }
 
 
   describe 'GET /index' do
@@ -20,6 +21,7 @@ RSpec.describe BooksController, type: :request do
 
   describe 'GET /show' do
     it 'renders show page and a successful response' do
+      sign_in user
       get book_path(book)
 
       expect(response).to be_successful
