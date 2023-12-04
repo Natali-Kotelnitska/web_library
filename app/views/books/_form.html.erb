@@ -15,6 +15,14 @@
     <%= form.input :description, as: :text %>
   </div>
 
+  <div class="my-5">
+    <%= form.input :cover, as: :file, label: 'Cover' %>
+  </div>
+
+  <div class="my-5">
+    <%= form.input :content, as: :file, label: 'Content (PDF file)' %>
+  </div>
+
   <div class="inline">
     <%= form.button :submit, 'Save', class: 'form_btn' %>
   </div>

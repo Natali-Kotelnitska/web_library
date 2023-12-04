@@ -6,6 +6,6 @@
 @import './components/button.css';
 @import './components/flash.css';
 @import './components/form.css';
-@import './components/book_card.css';
+@import './components/book.css';
 @import './components/devise_form.css';
-@import './components/book_list.css';
+@import './components/book_card.css';
