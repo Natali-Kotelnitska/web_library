@@ -1,0 +1,6 @@
+<search class="mx-10 ">
+  <%= simple_form_for :search, url: search_books_path, method: :get, html: {  class: "flex items-center", role: "search" } do |f| %>
+    <%= f.input :query, as: :search, input_html: { class: "query-input", placeholder: "Search book..." }, label: false %>
+    <%= f.submit "Search", class: "btn-login ml-2" %>
+  <% end %>
+</search>
