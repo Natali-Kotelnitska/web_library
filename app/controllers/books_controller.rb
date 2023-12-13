@@ -47,10 +47,32 @@ class BooksController < ApplicationController
     redirect_to books_path, notice: "Book was successfully destroyed.", status: :see_other
   end
 
+  def search
+    query = search_params[:query]
+
+    if query.present?
+      @books = BookSearch.search(query)
+
+      if @books.any?
+        flash.now[:notice] = "The #{@books.count} books with '#{query}' query found."
+      else
+        flash.now[:alert] = "No such book available."
+      end
+
+      render :index
+    else
+      redirect_back(fallback_location: root_path, alert: "Search field cannot be empty. Please try again.")
+    end
+  end
+
   private
 
     def book_params
       params.require(:book).permit(:title, :author, :isbn, :description, :cover, :content)
+    end
+
+    def search_params
+      params.require(:search).permit(:query)
     end
 
     def collection
