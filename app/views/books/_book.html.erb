@@ -30,9 +30,11 @@
     <% if book.content.attached? %>
       <div class="book-content">
         <h3 class="my-4 title_main">Content:</h3>
-          <%= link_to 'View Content', rails_blob_path(book.content, disposition: 'inline'), target: '_blank', class: "mb-8 btn-primary" %>
           <%= link_to 'Download Content', rails_blob_path(book.content, disposition: 'attachment'), class: "btn-primary" %>
       </div>
+
+        <%= link_to "View PDF",  view_pdf_book_path(@book), class: "btn-primary" %>
+
     <% end %>
   </div>
 </div>
