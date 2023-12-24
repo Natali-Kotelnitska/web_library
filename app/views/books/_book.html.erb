@@ -28,13 +28,11 @@
     </div>
 
     <% if book.content.attached? %>
-      <div class="book-content">
-        <h3 class="my-4 title_main">Content:</h3>
+    <h3 class="my-4 title_main">Content:</h3>
+      <div class="flex book-content">
           <%= link_to 'Download Content', rails_blob_path(book.content, disposition: 'attachment'), class: "btn-primary" %>
+          <%= link_to "View PDF",  view_pdf_book_path(book), class: "btn-primary" %>
       </div>
-
-        <%= link_to "View PDF",  view_pdf_book_path(@book), class: "btn-primary" %>
-
     <% end %>
   </div>
 </div>

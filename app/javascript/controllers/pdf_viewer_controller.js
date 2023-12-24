@@ -20,7 +20,7 @@ export default class extends Controller {
         content: { location: { url: pdfUrl } },
         metaData: { fileName: pdfFilename },
       },
-      {}
+      { embedMode: "SIZED_CONTAINER", showFullScreen: true}
     );
   }
 }
