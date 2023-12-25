@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   root "books#index"
 
-  resources :books
+  resources :books do
+     member do
+    get 'view_pdf', to: 'books#view_pdf', as: :view_pdf
+  end
+  end
 end
