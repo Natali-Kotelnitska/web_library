@@ -5,7 +5,7 @@
     </h1>
   </div>
 
-  <div id="books" class="grid min-w-full grid-cols-5 gap-7">
+  <div id="books" class="grid min-w-full sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-7">
       <%= render partial: "books/book_list", collection: @books, as: :book %>
   </div>
 </div>
