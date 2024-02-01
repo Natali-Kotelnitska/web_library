@@ -1,0 +1,11 @@
+<div class="w-6/12 mx-auto ">
+  <div class="self-center my-4">
+      <%= link_to "Back to book", @book, class: "btn-signup" %>
+  </div>
+
+  <div id="adobe-dc-view" style="height: 500px; width: 800px;"></div>
+  <div data-controller="pdf-viewer"
+     data-pdf-url="<%= rails_blob_path(@book.content) %>"
+     data-pdf-filename="<%= @book.title %>">
+  </div>
+</div>

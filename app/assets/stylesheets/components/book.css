@@ -19,7 +19,7 @@
   }
 
   .book-item--data {
-    @apply font-bold text-orange;
+    @apply font-medium font-semibold text-orange;
   }
 
   .book-description {
