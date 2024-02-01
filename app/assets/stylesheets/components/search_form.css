@@ -1,0 +1,5 @@
+@layer components {
+  .query-input {
+    @apply block w-full border rounded appearance-none;
+  }
+}
