@@ -5,7 +5,8 @@
         <span class="logo">Web Library</span>
       <% end %>
 
-      <%= link_to 'All books', root_path, class: "btn-signup" %>
+      <%= link_to 'All books', root_path, class: "btn-signup" %>'
+      <%= render "shared/search-form" %>
 
       <% if user_signed_in? %>
         <%= link_to 'New book', new_book_path, class: "btn-signup" %>
