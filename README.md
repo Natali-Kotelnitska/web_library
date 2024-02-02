@@ -6,12 +6,18 @@ Welcome to the Web Library project! This application provides a platform to read
 
 1. **User Registration:**
    - Implemented using Devise, allowing users to register and authenticate.
+    
+     ![Знімок екрана (523)](https://github.com/Natali-Kotelnitska/web_library/assets/83007830/36ce0e52-b4b9-4a81-8cc1-fdeefd80fb48)
 
 2. **Book Management:**
    - Users can add books to the library by uploading PDF files, along with images and text.
+     
+     ![Знімок екрана (519)](https://github.com/Natali-Kotelnitska/web_library/assets/83007830/cca1420f-68ba-4217-bfe7-f04dc5af08a7)
 
 3. **Active Storage:**
    - Books utilize Active Storage for file attachments, including covers and content in PDF format.
+   
+     ![Знімок екрана (522)](https://github.com/Natali-Kotelnitska/web_library/assets/83007830/71d1825b-44eb-4675-ad1b-ac108e2a60a4)
 
 4. **Search Functionality:**
    - Elasticsearch and Chewy are employed for efficient book search capabilities.
@@ -47,6 +53,7 @@ Welcome to the Web Library project! This application provides a platform to read
 
 ## Contribution
 Feel free to contribute and enhance the Web Library project. Your contributions are valued! Happy reading! 📚
+
 
 
 
